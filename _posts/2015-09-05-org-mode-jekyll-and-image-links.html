@@ -1,0 +1,102 @@
+---
+layout: post
+tags:
+- org-mode
+- emacs
+- jekyll
+- faq
+---
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Getting relative links in org-mode to mirror those in Jekyll</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This blog is created by <a href="http://jekyllbootstrap.com">Jekyll</a> however the blog posts are written in the excellent <a href="http://orgmode.org/manual/Publishing.html">org-mode</a> and published to HTML.
+</p>
+
+<p>
+The problem is that the directory structures of the <code>org</code> posts doesn't match the directory structure created by Jekyll. Assume your root directory looks like:
+</p>
+
+<pre class="example">
+_org/
+ - posts/
+   - 2015-09-05-a-blog-post.org
+ - images/
+   - an-image.png
+_posts/
+images/
+_site/
+</pre>
+
+<blockquote>
+<p>
+Remember that <code>_posts/</code> and <code>images/</code> are populated automatically when published by org-mode and Jekyll will then populate <code>_site/</code>.
+</p>
+</blockquote>
+
+<p>
+In order to include that image in the <code>org</code> document you would need to add a link to <code>../images/an-image.png</code>. The org mode publishing system will copy those images to <code>/images</code> however Jekyll will serve the blog post at <code>/2015/09/05/a-blog-post/</code> which contains an (incorrect) link to <code>../images/an-image.png</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Hack of hacks</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The right answer is almost certainly to customise the publishing system but I am just not that good of an emacs dude (yet!). So, my hack of hacks is based on the following:
+</p>
+
+<ul class="org-ul">
+<li>Jekyll posts are served with a URL that ends in <code>/</code>
+</li>
+<li><code>/images/an-image.png</code> is reachable from <code>../images/an-image.png</code> when sourced from <code>/a/</code>
+</li>
+<li>Jekyll's <a href="http://jekyllrb.com/docs/permalinks/">permalink</a> defines the URL generation strategy for each post
+</li>
+</ul>
+
+<p>
+This means that the 'relativeness' of the images directory and the published URL directory can be symmetrical if Jekyll serves <code>/2015-09-05-a-blog-post/</code> instead of <code>/2015/09/05/a-blog-post/</code>.
+</p>
+
+<p>
+To achieve this simply change the <code>permalink</code> in your root <code>_config.yml</code> to <code>/:year-:month-:day-:title</code> from the default <code>/:categories/:year/:month/:day/:title.html</code>. This means Jekyll will serve this blog post as a single url. Images are served from <code>/images</code> which is one directory up from <i>the-blog-url</i> that Jekyll is serving this from so the relative URL <code>../images/an-image.png</code> will work.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Warnings</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+URLs really shouldn't change that much. <i>Why</i> does Jekyll choose this strategy? Is it good for SEO? No idea (does anybody really understand that stuff?). What downsides are there to having the date embedded in the URL? So this might not be a sensible long-term strategy - I dunno.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Proof</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Everybody loves animals, so here is a photo of one of my dogs and cats looking very non-plussed:
+</p>
+
+
+<div class="figure">
+<p><img src="../images/dog-and-cat.jpg" alt="dog-and-cat.jpg" />
+</p>
+<p><span class="figure-number">Figure 1:</span> Bruce and Lily, sitting in a tree, kis&#x2026;.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Nope, still not working</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+The joy of open source means you can simply clone <a href="https://github.com/yatesco/yatesco.github.io">this repo</a> and play with it yourself! Good luck, and by all means create an <a href="https://github.com/yatesco/yatesco.github.io/issues">issue</a> for more help.
+</p>
+</div>
+</div>
