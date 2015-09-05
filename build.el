@@ -18,7 +18,7 @@
         ("org-static-colinyates"
          :base-directory "_org/images"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-         :publishing-directory "assets"
+         :publishing-directory "images/"
          :recursive t
          :publishing-function org-publish-attachment)
 

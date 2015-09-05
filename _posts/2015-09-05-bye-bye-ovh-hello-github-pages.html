@@ -1,0 +1,62 @@
+---
+layout: post
+tags:
+- blog
+- ovh
+- github
+---
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Bye bye</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="http://ovh.co.uk">OVH (UK)</a> are great for cheap commodity hardware and VPSes etc. Their <a href="https://www.ovh.co.uk/web-hosting/">web hosting</a> packages are fantastic as well. Their management interfaces, not so much. In fact, to be blunt, they suck. And, to be blunt, so does their customer support sometimes.
+</p>
+
+<p>
+For example, I signed up for a web hosting package, it came through and everything worked. Then I decided I really didn't need it and could get away with the emailing package that comes with their domain names and I could use <a href="https://pages.github.com">Github Pages</a> to host this blog. One email to customer support asking to cancel the hosting but keep the domain names and email and hosting support was cancelled. Unfortunately this meant their control panel no longer allowed access to my email address(es) at that domain nor could I amend any DNS records.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> GitHub Pages</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+GitHub kindly allow you to create a 'magic' repository called <code>&lt;your-username&gt;.gihub.io</code> which they will host and publish on the web for you. For free! In addition, it also <a href="https://help.github.com/articles/using-jekyll-with-pages/">natively understands Jekyll</a>.
+</p>
+
+<p>
+Nice.
+</p>
+
+<p>
+Simply commit your <code>jekyll</code> project to that repository, sans the <code>_site</code> directory, twiddle your thumbs for a few seconds and then visit <code>http://&lt;your-username.github.io</code> and your website should appear!
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Who wants <a href="http://">http://</a>&lt;your-username&gt;.github.io?</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Nobody I expect, that's why the awesome continues when you realise you can add your own custom domain. To do this, add <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">a CNAME to your repository</a> and update your domain's DNS servers to add an <code>ALIAS</code> or <code>CNAME</code> to point to github.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> OVH DNS</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+As I said, OVH's new control panel wasn't letting me update my DNS settings so I went to the old control panel and updated the <code>A</code> record for colinyates.co.uk to point to github's IP address, as per <a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/">here</a>:
+</p>
+
+
+<div id="fig:ovh-dns" class="figure">
+<p><img src="../images/ovh-dns-settings.png" alt="ovh-dns-settings.png" />
+</p>
+<p><span class="figure-number">Figure 1:</span> DNS settings for colinyates.co.uk</p>
+</div>
+</div>
+</div>

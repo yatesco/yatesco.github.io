@@ -9,4 +9,12 @@ twitter_username: yatesco
 github_username:  yatesco
 
 # Build settings
+
+# prefer /blog/y-m-d-my-post over /y/m/d/my-post so relative links
+# (../images) works from org mode. This is a cheat, but because 'posts'
+# and 'images' are siblings in _org relative links are reflected in the
+# published article. This means that /ABC/ will load an image from
+# /images/.
+# (remember that jekyll produces a trailing slash)
+permalink: /:year-:month-:day-:title
 markdown: kramdown
