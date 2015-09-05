@@ -1,0 +1,24 @@
+#+BEGIN_HTML
+---
+layout: post
+title: "Cough, cough, sick, sick"
+date: 2015-08-28 16:24
+tags:
+ - sick
+ - blog
+---
+#+END_HTML
+
+Unfortunately we (family) have all been under the weather with different grades of sickness. My wife, and now me have a pretty nasty stomach bug which also seems to attack the throat. The kids are all much better but are generally very tired.
+
+Not nice.
+
+All of this is to say that my new-found blog isn't getting off to the best start.
+
+As the pastor of my [[http://trinitylifechurch.org.uk/][church]] likes to say:
+
+#+BEGIN_VERSE
+ Better days are ahead
+
+   -- [[http://trinitylifechurch.org.uk/leaders/][David Hinds]], frequently.
+#+END_VERSE

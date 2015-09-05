@@ -1,0 +1,43 @@
+#+BEGIN_HTML
+---
+layout: post
+title: "Still ill..and a test"
+tags: 
+- emacs
+- org-mode
+- blog
+---
+#+END_HTML
+* Still ill
+This head cold sucks and nothing is seeming to shift it.
+
+However, I thought I would do some more blogging and see if I can get my emacs->blog workflow underway, and the answer is yes - woot!
+
+/(drum roll...)/
+
+This post was written entirely in =org-mode= with a [[http://emacswiki.org/emacs/Yasnippet][yasnippet]] for the header:
+
+#+BEGIN_SRC emacs-lisp
+# -*- mode: snippet -*-
+#name : blog-head
+#key : blog-head
+#contributor : Colin Yates
+# --
+#+BEGIN_HTML
+---
+layout: post
+title: "$1"
+tags: 
+- $2
+---
+#+END_HTML
+$0
+#+END_SRC
+
+I've got to stop as I have already spent too much time [[https://en.wiktionary.org/wiki/yak_shaving][yak shaving]] and messing up:
+
+#+BEGIN_HTML
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">that feeling of deleting the wrong directory and associated buffers for uncommitted files. I shouldn&#39;t work with a head-cold. <a href="https://twitter.com/hashtag/fail?src=hash">#fail</a></p>&mdash; Colin Yates (@yatesco) <a href="https://twitter.com/yatesco/status/638337979640057856">August 31, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+#+END_HTML
+
+When I can think straight I will publish more.
