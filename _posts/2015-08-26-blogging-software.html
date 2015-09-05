@@ -1,0 +1,194 @@
+---
+layout: post
+title: "Blogging with jekyll, hexo, emacs and org"
+date: 2015-08-26 20:32
+tags:
+ - emacs
+ - jekyll
+ - org-mode
+ - blog
+---
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Moan, moan, moan</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This is really just a moan, move on - there are almost certainly better things to do with your life.
+</p>
+
+<p>
+Still here? Ok, you have been warned.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Blogging, blogging, blogging</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I rate <a href="https://www.gnu.org/software/emacs/">emacs</a>, it really can seem to do anything, as long as you are happy to build your own editor on top of it.
+</p>
+
+<p>
+I also rate <a href="http://orgmode.org">org-mode</a>, which can also seem to do anything, and <a href="http://daringfireball.net/projects/markdown/">markdown</a> which is a <span class="underline">much</span> saner way to create content that end up in HTMLs. And of course <a href="http://orgmode.org/manual/Publishing.html">org-mode can publish docs</a>.
+</p>
+
+<p>
+A also decided that I didn't want to hand over my content, so a system which generates a website I can upload to my server is another requirement.
+</p>
+
+<p>
+A quick google and <a href="http://jekyllrb.com">jekyll</a> seems to be the number one contender, it supports <code>markdown</code>, is a static site generator and everybody seems to rave about it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Jekyll</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Getting started with Jekyll is trivially easy, particularly on a Mac where ruby is installed out of the box. From their start page:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">$ gem install jekyll
+$ jekyll new my-awesome-site
+$ cd my-awesome-site
+$ /my-awesome-site $ jekyll serve
+;; =&gt; Now browse to http://localhost:4000
+</pre>
+</div>
+
+<p>
+And it really that easy. In fact, this blog (as of now) is using the default theme - not bad is it? Blog posts require a trivial amount of meta-data and it is even natively understood (indeed, even underpins) <a href="https://pages.github.com">github pages</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Jekyll and not Hyde</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+So where is the pain?
+</p>
+
+<p>
+Well, turns out that when hosted on <code>github pages</code> you can't use plugins. Ok, fine, except some pretty fundamental capabilities aren't supported out of the box:
+</p>
+<ul class="org-ul">
+<li>tagging
+</li>
+<li>tag clouds
+</li>
+<li>tag feeds
+</li>
+<li>archived pages
+</li>
+<li>search
+</li>
+</ul>
+
+<p>
+and so on.
+</p>
+
+<p>
+Jekyll does support <a href="http://jekyllrb.com/docs/plugins/">plugins</a> but they aren't enabled when using <code>github pages</code>. There are some pretty neat people out there who have achieved some of the above capabilities using <a href="https://github.com/Shopify/liquid/wiki">liquid</a> which <code>jekyll</code> uses for <a href="http://jekyllrb.com/docs/templates/">templating</a>, for example <a href="https://duckduckgo.com/?q=jekyll%2520liquid%2520tags">here are some</a>.
+</p>
+
+<p>
+The problem is I can't seem to get them to work. I also can't seem to get any of the <a href="https://duckduckgo.com/?q=jekyll%2520tag%2520plugin">plugin based ones</a> to work either.
+</p>
+
+<p>
+Is it me? Probably :-), and I confess I haven't spent more than a couple of hours on it, but why on <span class="underline">earth</span> isn't something as fundamental as this supported out of the box?
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Emacs to the rescue</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Moving on, at least I can look forward to using <code>emacs</code> and <code>org-mode</code> to integrate with <code>jekyll</code>. Look, there are even <a href="http://orgmode.org/worg/org-tutorials/org-jekyll.html">official instructions</a>. Except that assumes you have already configured the beast that is <code>org-mode publishing</code>.
+</p>
+
+<p>
+Surely there must be an easier HOWTO? Well there <a href="https://duckduckgo.com/?q=org%2520mode%2520jekyll">seems to be lots</a> only none of those seem to work either!
+</p>
+
+<p>
+Again, is it me? Again, I only spent a few hours on this, but compared to the 5 minutes I spent bootstrapping <code>jekyll</code> and creating my first blog post, I am shocked that this stuff is so hard.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Giving up?</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+At this point I was thinking that maybe I am not the candidate audience as I simply want a blog to work, I don't particularly care <span class="underline">how</span>, only that is <code>markdown</code> based and is statically generated. A quick bit of <a href="https://staticsitegenerators.net">research</a> showed there are plenty in this space and a bit more research showed <a href="https://www.staticgen.com">https://www.staticgen.com</a>.
+</p>
+
+<p>
+The top 4 at the time I looked were:
+</p>
+<ul class="org-ul">
+<li>jekyll
+</li>
+<li><a href="http://www.gitbook.com">GitBook</a>
+</li>
+<li><a href="http://octopress.org">Octopress</a>
+</li>
+<li><a href="http://hexo.io">Hexo</a>
+</li>
+</ul>
+
+<p>
+Well, I didn't want to depend on GitHub and Octopress is based on jekyll. Off to Hexo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Hexo</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<a href="https://hexo.io">Hexo</a> is about as simple as jekyll to get started, and out of the box it supports all the various gadgetry that I want.
+</p>
+
+<p>
+Posts are written in <code>markdown</code> with a little big of ceremony at the top, similar to jekyll.
+</p>
+
+<p>
+But looking into a little bit more, things just didn't sit well. Nothing specific, but it didn't <span class="underline">vibe</span> with me as much as jekyll.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> So where are we?</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+So, I am going to stick with jekyll and accept I might need to put some more time in than expected. Fine, and it is definitely a nice problem to have compared to the horrors of hosted blogging platforms (which shall remain nameless).
+</p>
+
+<p>
+Emacs? Yeah, I am typing this in <code>org mode</code> and will manually export it to markdown and then copy and paste.
+</p>
+
+<p>
+Yeah, I know.
+</p>
+
+<p>
+Anyway, that is the end of my moan. Thanks for reading and hopefully the rest of the posts on this blog will be a bit more educational and upbeat, but please do be prepared for this blog to grow organically as I get used to jekyll ;-).
+</p>
+
+<p>
+Bye all.
+</p>
+</div>
+</div>

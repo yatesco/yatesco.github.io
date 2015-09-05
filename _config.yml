@@ -1,0 +1,12 @@
+# Site settings
+title: Random musings...
+email: colin@colinyates.co.uk
+description: > # this means to ignore newlines until "baseurl:"
+  A collection of musics about Software Engineering and the madness of turning ambiguous specs into 0s and 1s.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://colinyates.co.uk" # the base hostname & protocol for your site
+twitter_username: yatesco
+github_username:  yatesco
+
+# Build settings
+markdown: kramdown

@@ -1,0 +1,7 @@
+jekyll/_drafts/
+jekyll/_site/
+.DS_Store
+*.swp
+/*.scssc
+/jekyll/.sass-cache/*
+/jekyll/_posts/*
